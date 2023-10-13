@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <script>
+      function validateForm() {
+        var username = document.getElementById("uname").value;
+        var password = document.getElementById("pass").value;
+
+        if (username === "" || password === "") {
+          alert("Both username and password are required.");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .main {
+        height: 400px;
+        width: 350px;
+        background-color: aliceblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .main-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 90px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 250px;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      input[type="Submit"] {
+        background-color: #007bff;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+      }
+
+      input[type="Submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      .title {
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;  
+      }
+      body{
+        background-repeat: no-repeat;
+        background-size: cover;      
+        background-image: url("image/bg_image.avif");
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="title">
+      <h1>LOGIN PAGE</h1>
+    </div>
+    <div class="main-container">
+      <div class="main">
+        <form
+          action="loginserver"
+          id="myForm"
+          onsubmit="return validateForm()"
+          method="post"
+        >
+          <input
+            type="text"
+            name="un"
+            id="uname"
+            placeholder="Username"
+            required
+          /><br />
+
+          <input
+            type="password"
+            name="p"
+            id="pass"
+            placeholder="Password"
+            required
+          /><br />
+
+          <button type="Submit">SUBMIT</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

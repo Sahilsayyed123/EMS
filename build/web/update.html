@@ -1,0 +1,176 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .header {
+        background-color: cadetblue;
+        display: flex;
+        width: 100%;
+        align-content: center;
+        flex-wrap: wrap;
+        height: 44px;
+      }
+      .emp,
+      .view,
+      .add,
+      .delete,
+      .update,
+      .per {
+        background-color: cadetblue;
+        border: none;
+      }
+      .header-container {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .title {
+        padding-top: 40px;
+        display: flex;
+        justify-content: center;
+      }
+      .sp {
+        padding-right: 15px;
+      }
+      td {
+        padding: 15px;
+      }
+
+      .table-container {
+        display: flex;
+        justify-content: center;
+      }
+      .Table {
+        border: 1px solid;
+        font-size: large;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        width: 75%;
+        display: flex;
+        justify-content: center;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      input[type="text"] {
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      input[type="Submit"] {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      body {
+        background-image: url("image/bg_image.avif");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      img {
+        width: 40px;
+      }
+       .icon {
+        width: 24px;
+      }
+      .end {
+        background-color: cadetblue;
+        padding: 8px;
+        padding-right: 20px;
+      }
+        .emp {
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="header-container">
+        <div class="img-container">
+            <div class="emp"><img src="image/photo_8873767.png" alt="Employee management system" /></div>
+        </div>
+          
+        <div class="header">
+          <div class="sp"></div>
+
+          <a href="adminHome.jsp">
+            <div><button class="view">VIEW TABLE</button></div>
+          </a>
+          <div class="sp"></div>
+          <a href="index.html">
+            <div><button class="add">ADD</button></div>
+          </a>
+          <div class="sp"></div>
+          <a href="update.html">
+            <div><button class="update">UPDATE</button></div>
+          </a>
+          <div class="sp"></div>
+          <a href="delete.html">
+            <div><button class="delete">DELETE</button></div>
+          </a>
+          <div class="sp"></div>
+          <a href="performance.html">
+            <div><button class="per">PERFORMANCE</button></div>
+          </a>
+        </div>
+            <div class="end">
+          <a href="login.html">
+            <img class="icon" src="image/right-from-bracket-solid.svg" alt="" />
+          </a>
+        </div>
+      </div>
+      <br />
+      <div class="title">
+        <h1>UPDATE EMPLOYEE</h1>
+      </div>
+<div class="container">
+      <form action="update" method="post">
+        <input type="text" name="un" placeholder="Username" required />
+        <input type="text" name="fn" placeholder="First Name" />
+        <input type="text" name="ln" placeholder="Last Name" />
+        <input type="text" name="g" placeholder="Gender" />
+        <input type="text" name="dob" placeholder="Date of Birth" />
+        <input type="text" name="em" placeholder="Email" />
+        <input type="text" name="pn" placeholder="Phone Number" />
+        <input type="text" name="d" placeholder="Department" />
+        <input type="text" name="jt" placeholder="Job Title" />
+        <input type="text" name="doj" placeholder="Date of Joining" />
+        <input type="text" name="sa" placeholder="Address" />
+
+        <input type="Submit" value="update" name="b1" />
+      </form>
+    </div>
+    </div>
+  </body>
+</html>

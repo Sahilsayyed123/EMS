@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: cadetblue;
+  display: flex;
+  width: 100%;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 44px;
+}
+
+.emp,
+.view,
+.add,
+.delete,
+.update,
+.per {
+  background-color: cadetblue;
+  border: none;
+}
+
+.header-container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.sp {
+  padding-right: 15px;
+}
+
+td {
+  padding: 15px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.Table {
+  border: 1px solid;
+  font-size: large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.emp {
+  padding-left: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input[type="Submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+body {
+  background-image: url("image/bg_image.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img {
+  width: 40px;
+}
+
+.icon {
+  width: 24px;
+}
+
+.end {
+  background-color: cadetblue;
+  padding: 8px;
+  padding-right: 20px;
+}
+/* for leave application */
+.leave-body{
+  padding-top: 44px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 618px;
+}
+.form-container{
+  height: 550px;
+  width: 1000px;
+  background-color: antiquewhite;
+}
+h1{
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+}
+hr{
+  width: 80%;
+}
+p{
+  padding-left: 25px;
+  width: 72%;
+  padding-bottom: 8px;
+}
+.para-container{
+  display: flex;
+  justify-content: center;
+}
+.input-container{
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+.label-container2{
+  display: flex;
+
+}
+.email-input{
+  width: 670px;
+}
+.dept{
+  padding-left: 170px;
+}
+.applicant{
+  padding-left: 170px;
+
+}
+.label{
+  padding-left:170px ;
+}
+.phone{
+  padding-left:267px;
+}
+.input-box{
+  width: 320px;
+}
+
+.inputs{
+  padding-right: 30px;
+}
+.radio-container{
+  padding-top: 8px;
+  display: flex;
+  width:670px;
+}
+.rad-div{
+  display: flex;
+    justify-content: center;
+}
+.rad{
+  padding-right: 100px;
+}
+.fifth-div,.first-div,.second-div,.third-div,.fourth-div,.sixth-div{
+  padding-top: 10px;
+}
+.btn-container{
+  display: flex;
+  justify-content: center;
+  
+}
+.btn{
+  font-size: 20px;
+  width:670px;
+  border: none;
+  background-color: cadetblue;
+  color: #ffffff;
+}
+.input-date{
+  width: 320px;
+  font-size: 15px;
+  border: none;
+  height: 25px;
+}
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="header-container">
+            <div class="emp">
+                <img src="image/photo_8873767.png" alt="Employee management system" />
+            </div>
+
+            <div class="header">
+                <div class="sp"></div>
+
+                <a href="home.jsp">
+                    <div><button class="view">VIEW TABLE</button></div>
+                </a>
+                <div class="sp"></div>
+<!--                <a href="index.html">
+                    <div><button class="add">ADD</button></div>
+                </a>
+                <div class="sp"></div>
+                <a href="update.html">
+                    <div><button class="update">UPDATE</button></div>
+                </a>
+                <div class="sp"></div>
+                <a href="delete.html">
+                    <div><button class="delete">DELETE</button></div>
+                </a>
+                <div class="sp"></div>-->
+                <a href="leave.html">
+                    <div><button class="per">APPLY LEAVE</button></div>
+                </a>
+            </div>
+            <div class="end">
+                <a href="login.html">
+                    <img class="icon" src="image/right-from-bracket-solid.svg" alt="" />
+                </a>
+            </div>
+        </div>
+        <div class="leave-body">
+            <div class="form-container">
+                <div class="leave-header">
+                    <h1>
+                        Leave Application
+                    </h1>
+                    <div class="para-container">
+
+                        <p>
+
+                            You can request leave through your company's official leave request
+                            system or by following the established procedure outlined in your organization's policies.
+                        </p>
+                    </div>
+                    <center>
+
+                        <hr>
+                    </center>
+                </div>
+                <form action="leave" method="POST">
+
+                    <div class="main-leave">
+                        <div class="first-div">
+                            <div class="label-container1">
+                                <label class="label">Applicant Name</label>
+                            </div>
+                            <div class="input-container">
+                                <div class="inputs">
+                                    <input class="input-box" type="text" name="fn" placeholder="First">
+                                </div>
+                                <div class="inputsl">
+                                    <input class="input-box" type="text" name="ln" placeholder="Last">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="second-div">
+                            <div class="main-input">
+
+                                <div class="label-container2">
+                                    <label class="label">Department</label>
+                                    <label class="phone">Phone</label>
+                                </div>
+                            </div>
+
+                            <div class="input-container">
+                                <div class="inputs">
+                                    <input class="input-box" type="text" name="d" placeholder="Production">
+                                </div>
+                                <div class="inputsp">
+                                    <input class="input-box" type="text" name="p" placeholder="######">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="third-div">
+                            <div class="label-container3">
+                                <div>
+                                    <label class="label">Email</label>
+                                </div>
+                                <div class="input-container">
+                                    <div class="inputse">
+                                        <input class="email-input" type="text" name="e">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="fourth-div">
+                            <div class="label-container4">
+                                <div>
+                                    <label class="label">Reason for Leave</label>
+                                    <div class="rad-div">
+
+                                        <div class="radio-container">
+                                            <div class="rad">
+
+                                                <input type="radio" value="Emergency Leave" name="o">
+                                                <label>Emergency Leave</label>
+                                            </div>
+                                            <div class="rad">
+
+                                                <input type="radio" value="Annual Leave" name="o">
+                                                <label>Annual Leave</label>
+                                            </div>
+
+                                            <div class="rad">
+
+                                                <input type="radio" value="Other" name="o">
+                                                <label>Other</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="fifth-div">
+
+                            <div class="input-container">
+                                <div class="inputs">
+                                    <div>
+
+                                        <label>From</label>
+                                    </div>
+                                    <input class="input-date" type="date" name="from" placeholder="First">
+                                </div>
+                                <div class="inputsd">
+                                    <div>
+
+                                        <label>To</label>
+                                    </div>
+
+                                    <input class="input-date" type="date" name="to" placeholder="Last">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sixth-div">
+                            <div class="btn-container">
+
+                                <button class="btn">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

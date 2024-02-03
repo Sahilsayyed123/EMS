@@ -8,6 +8,21 @@ import java.util.UUID;
 
 @WebServlet(urlPatterns = { "/leave" })
 public class leave extends HttpServlet {
+
+public String encrypt(String plaintext)
+{    
+    String evenchars="", oddchars="", encrypted="", decrypted="";
+        int i,j=0,k=0;
+	for(i=0;i<plaintext.length();i+=2)
+    	evenchars+=String.valueOf(plaintext.charAt(i));
+	for(i=1;i<plaintext.length();i+=2)
+    	oddchars+=String.valueOf(plaintext.charAt(i));
+   encrypted=evenchars+oddchars;
+   return encrypted;
+}
+
+
+
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
@@ -21,7 +36,19 @@ public class leave extends HttpServlet {
             String o = request.getParameter("o");
             String df = request.getParameter("from");
             String dt = request.getParameter("to");
+            
+            fn=encrypt(fn);
+            ln=encrypt(ln);
+            d=encrypt(d);
+            p=encrypt(p);
+            e=encrypt(e);
+            o=encrypt(o);
+            df=encrypt(df);
+            dt=encrypt(dt);
 
+            
+            
+            
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample", "app", "app");
                 

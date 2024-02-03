@@ -45,25 +45,29 @@ public class loginserver extends HttpServlet {
             
             PreparedStatement p = con.prepareStatement("select * from employee ");
             ResultSet r=p.executeQuery();
+
             while(r.next()){
                 String username=r.getString(6);
                 if(uname.equals(username)){
                     PreparedStatement ps = con.prepareStatement("select password from employee where username=?");
                     ps.setString(1, uname);
                     ResultSet rs=ps.executeQuery();
-                    rs.next();
+                    while(rs.next()){
+
                     String password=rs.getString(1);
                     if(pass.equals(password)){
                         session.setAttribute("username", uname);
                         request.setAttribute("username",uname);
                         RequestDispatcher rd=request.getRequestDispatcher("home.jsp");
                         rd.include(request,response);
+
                     }else
                     {
                           RequestDispatcher rd=request.getRequestDispatcher("login.html");
                         rd.include(request,response);                  
                     }
-            
+                                                        }
+
             }
             }
             con.close();

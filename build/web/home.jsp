@@ -52,7 +52,7 @@
       .sp {
         padding-right: 15px;
       }
-      td {
+/*      td {
         padding: 18px;        
         border-style: none none dotted none;
 
@@ -73,7 +73,37 @@
         background-color: white;
         justify-content: center;
         border-radius: 5px;
+      }*/
+      .table-container {    text-align: -webkit-center;
       }
+ table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #3498db;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e0e0e0;
+    }
       body {
         font-family: Arial, sans-serif;
         background-color: #f5f5f5;
@@ -145,11 +175,8 @@
 -->          <a href="home.jsp">
             <div><button class="view">VIEW TABLE</button></div>
           </a>
-          <div class="sp"></div>
-        
-        
-         
-    
+          <div class="sp"></div>        
+          
           <a href="leave.html">
             <div><button class="per">APPLY LEAVE    </button></div>
           </a>
@@ -181,6 +208,7 @@
                
                <div class="Table">
             <table>
+                <thead>
                 <tr>
                   <th>First Name</th>
                   <th>Last Name</th>
@@ -189,10 +217,11 @@
                   <th>Department</th>
                   <th>Job Title</th>
                   <th>Phone</th>
-                </tr>                  
+                </tr>     
+                </thead>
                <%
                     while(rs.next()){
-                        out.println("<tr><td>"+ rs.getString(1) +"</td><td>"+rs.getString(2)+"</td><td>"+rs.getString(3)+"</td><td>"+rs.getString(4)+"</td><td>"+rs.getString(8)+"</td><td>"+rs.getString(9)+"</td><td>"+rs.getInt(11)+"</td></tr>");
+                        out.println("<tbody><tr><td>"+ rs.getString(1) +"</td><td>"+rs.getString(2)+"</td><td>"+rs.getString(3)+"</td><td>"+rs.getString(4)+"</td></tr></tbody>");
                 }
                 %> 
 

@@ -9,6 +9,8 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
+<%@page import="java.time.LocalDate"%>
+<%@page import="java.time.temporal.ChronoUnit"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +54,7 @@
       .sp {
         padding-right: 15px;
       }
-      td {
+/*      td {
         padding: 5px;        
         border-style: none none dotted none;
 
@@ -73,6 +75,39 @@
         background-color: white;
         justify-content: center;
         border-radius: 5px;
+      }*/
+.table-container {    text-align: -webkit-center;
+      }
+      table {
+        width: 90%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #3498db;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #e0e0e0;
       }
       body {
         font-family: Arial, sans-serif;
@@ -158,8 +193,8 @@
             <div><button class="delete">DELETE</button></div>
           </a>
           <div class="sp"></div>
-          <a href="performance.html">
-            <div><button class="per">PERFORMANCE</button></div>
+          <a href="leave.jsp">
+            <div><button class="per">LEAVE</button></div>
           </a>
         </div>
         <div class="end">
@@ -173,17 +208,26 @@
           <h1>EMPLOYEES TABLE</h1>
       </div><br/><br/>
             <%String username = (String) session.getAttribute("username"); %>
-    <%                
+    <%      
+
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample", "app", "app");
             PreparedStatement ps = con.prepareStatement("select * from leavetable");
                     ResultSet rs=ps.executeQuery();
+
+
+
+
+
+                    
                %>   
+   
                 <div class="table-container">
                    
                
                <div class="Table">
             <table>
+                <thead>
                 <tr>
                   <th>First Name</th>
                   <th>Last Name</th>
@@ -193,10 +237,18 @@
                   <th>Reason</th>
                   <th>From</th>
                   <th>To</th>
-                </tr>                  
+                </tr>  
+                </thead>
                <%
-                    while(rs.next()){%>
-                    <tr><td><%=rs.getString(1)%></td><td><%=rs.getString(2)%></td><td><%=rs.getString(3)%></td><td><%=rs.getString(4)%></td><td><%=rs.getString(5)%></td><td><%=rs.getString(6)%></td><td><%=rs.getString(7)%></td><td><%=rs.getString(8)%></td></tr>
+                    while(rs.next()){
+
+               
+               
+               
+               
+               %>
+                    <tbody>
+                        <tr><td><%=rs.getString(1)%></td><td><%=rs.getString(2)%></td><td><%=rs.getString(3)%></td><td><%=rs.getString(4)%></td><td><%=rs.getString(5)%></td><td><%=rs.getString(6)%></td><td><%=rs.getString(7)%></td><td><%=rs.getString(8)%></td></tr></tbody>
                 <% }
                 %> 
                </table>

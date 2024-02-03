@@ -250,8 +250,8 @@
                 <div class="profile_card">
                   <div class="left">
                     <div class="r-container">
-                      <b><div class="name"><%=rs.getString(1)%></div></b>
-                      <div class="job"><%=rs.getString(9)%></div>
+                        <b><div class="name" style="text-transform:uppercase;"><%=rs.getString(1)%></div></b>
+                      <div class="job" style="text-transform:uppercase;"><%=rs.getString(9)%></div>
                     </div>
                   </div>
                   <div class="right">
@@ -260,11 +260,11 @@
                       <hr class="line" width="360px" color="black" />
                       <div class="infodetail">
                         <div class="sub-class">
-                          <div>Email</div>
+                            <div><b>EMAIL</b></div>
                           <div><%=rs.getString(5)%></div>
                         </div>
                         <div class="sub-class">
-                          <div>Phone</div>
+                            <div><b>PHONE</b></div>
                           <div>+91 <%=rs.getString(11)%></div>
                         </div>
                       </div>
@@ -272,11 +272,11 @@
                       <hr class="line" width="360px" color="black" />
                       <div class="infodetail">
                         <div class="sub-class">
-                          <div>address</div>
+                            <div><b>ADDRESS</b></div>
                           <div><%=rs.getString(12)%></div>
                         </div>
                         <div class="sub-class">
-                          <div>username</div>
+                            <div><b>USERNAME</b></div>
                           <div><%=rs.getString(6)%></div>
                         </div>
                       </div>

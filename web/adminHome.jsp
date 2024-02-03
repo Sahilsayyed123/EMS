@@ -52,27 +52,38 @@
       .sp {
         padding-right: 15px;
       }
+
+
+      .table-container {    text-align: -webkit-center;
+      }
+      table {
+        width: 80%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      th,
       td {
-        padding: 5px;        
-        border-style: none none dotted none;
-
+        padding: 15px;
+        text-align: left;
       }
 
-
-      .table-container {
-        display: flex;
-        justify-content: center;
+      th {
+        background-color: #3498db;
+        color: #fff;
+        font-weight: bold;
       }
-      .Table {
-        border: 1px solid;
-        font-size: large;
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-        width: 96%;
-        display: flex;
-        background-color: white;
-        justify-content: center;
-        border-radius: 5px;
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #e0e0e0;
       }
       body {
         font-family: Arial, sans-serif;
@@ -134,7 +145,7 @@
   <body>
     <div>
       <div class="header-container">
-          <a href="profile.jsp">
+          <a href="adminHome.jsp">
                     <div class="emp"><img src="image/photo_8873767.png" alt="Employee management system" /></div>
           </a>
 
@@ -158,8 +169,8 @@
             <div><button class="delete">DELETE</button></div>
           </a>
           <div class="sp"></div>
-          <a href="performance.html">
-            <div><button class="per">PERFORMANCE</button></div>
+          <a href="leave.jsp">
+            <div><button class="per">LEAVE</button></div>
           </a>
         </div>
         <div class="end">
@@ -177,6 +188,9 @@
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample", "app", "app");
             PreparedStatement ps = con.prepareStatement("select * from employee");
+            PreparedStatement ps1 = con.prepareStatement("select * from employee_extra");
+            ResultSet rs1=ps1.executeQuery();   
+
                     ResultSet rs=ps.executeQuery();
                %>   
                 <div class="table-container">
@@ -184,6 +198,7 @@
                
                <div class="Table">
             <table>
+                <thead>
                 <tr>
                   <th>First Name</th>
                   <th>Last Name</th>
@@ -192,13 +207,12 @@
                   <th>Email</th>
                   <th>Username</th>
                   <th>Password</th>
-                  <th>Department</th>
-                  <th>Job Title</th>
-                  <th>Phone</th>
-                  <th>Address</th>
-                </tr>                  
+
+                </tr>   
+                </thead>
                <%
                     while(rs.next()){%>
+                    <tbody>
                     <tr>
                         <td><%=rs.getString(1)%></td>
                         <td><%=rs.getString(2)%></td>
@@ -207,14 +221,10 @@
                         <td><%=rs.getString(5)%></td>
                         <td><%=rs.getString(6)%></td>
                         <td><%=rs.getString(7)%></td>
-                        <td><%=rs.getString(8)%></td>
-                        <td><%=rs.getString(9)%></td>
-                        <td><%=rs.getString(11)%></td>
-                        <td><%=rs.getString(12)%></td>
-                        <td><button name="<%=rs.getString(6)%>  ">leaves</button></td>
+
 
                     </tr>
-
+                        </tbody>    
                 <%}
                 %> 
                </table>
